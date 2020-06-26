@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Portfolio Website</title>
+</head>
+<body>
+
+<h1>this is Bikash Portfolio</h1>
+
+{% for project in projects %}
+
+    <h1>{{ project.title }}</h1>
+    <p>{{ project.description }}</p>
+    <img src="{{ project.image.url }}" alt="Image" height="100" width="100">
+    {% if project.url %}
+        <br>
+        <button><a href="{{ project.url }}">URL</a></button>
+    {% endif %}
+
+{% endfor %}
+
+</body>
+</html>
